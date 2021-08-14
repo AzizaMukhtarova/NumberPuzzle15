@@ -126,7 +126,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Finish"
+                android:text="Exit"
                 android:textColor="@color/white"
                 android:textSize="25sp"/>
 

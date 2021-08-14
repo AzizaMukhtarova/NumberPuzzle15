@@ -8,6 +8,26 @@
     tools:context=".AboutActivity"
     android:orientation="vertical">
 
+    <FrameLayout
+        android:layout_gravity="top|center"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#CC3F385A"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="start|center"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_back" />
+
+    </FrameLayout>
+
     <TextView
         android:layout_gravity="center"
         android:id="@+id/text_about"

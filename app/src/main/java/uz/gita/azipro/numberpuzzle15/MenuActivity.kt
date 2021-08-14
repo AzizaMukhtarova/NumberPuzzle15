@@ -13,7 +13,6 @@ class MenuActivity : AppCompatActivity() {
         findViewById<View>(R.id.button_play).setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish()
         }
 
         findViewById<View>(R.id.button_setting).setOnClickListener {
