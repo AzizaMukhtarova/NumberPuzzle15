@@ -52,11 +52,14 @@
                 android:textSize="25sp" />
         </LinearLayout>
     </LinearLayout>
-
+<LinearLayout
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:id="@+id/container"
@@ -172,8 +175,17 @@
                 android:background="#fff" />
         </RelativeLayout>
 
-
     </FrameLayout>
+    <ImageButton
+        android:id="@+id/completePuzzle"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_complate"
+        android:background="#00848AC4"/>
+</LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"

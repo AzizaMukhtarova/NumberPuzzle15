@@ -35,6 +35,10 @@ class MainActivity : AppCompatActivity() {
         switchCompat = findViewById(R.id.buttonSwitch)
         restart?.setOnClickListener { clickRestart() }
         homeButton?.setOnClickListener { clickBackToHome() }
+        findViewById<ImageButton>(R.id.completePuzzle).setOnClickListener{
+            completePuzzle()
+            Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun initButtons() {
@@ -80,6 +84,23 @@ class MainActivity : AppCompatActivity() {
             button?.setBackgroundResource(R.color.peach_color)
         }
         setDefaultValue()
+    }
+
+    private fun completePuzzle(){
+        initNumbers()
+        for (i in 0..14) {
+            val x = i / 4
+            val y = i % 4
+            val button = buttons[x][y]
+            if (button != null) {
+                button.text = numbers!![i]
+            }
+            button?.setBackgroundResource(R.color.peach_color)
+        }
+        empty.x = 3
+        empty.y = 3
+        buttons[3][3]!!.text = ""
+        buttons[3][3]!!.setBackgroundResource(R.color.blue_color)
     }
 
     private fun setDefaultValue() {
@@ -189,5 +210,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+
 
 }
