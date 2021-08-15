@@ -35,14 +35,14 @@ class MainActivity : AppCompatActivity() {
         switchCompat = findViewById(R.id.buttonSwitch)
         restart?.setOnClickListener { clickRestart() }
         homeButton?.setOnClickListener { clickBackToHome() }
-        findViewById<ImageButton>(R.id.completePuzzle).setOnClickListener{
+        findViewById<ImageButton>(R.id.completePuzzle).setOnClickListener {
             completePuzzle()
         }
     }
 
     private fun initButtons() {
         mediaPlayer = MediaPlayer.create(this, R.raw.audio)
-        buttonSound = MediaPlayer.create(this,R.raw.button_audio)
+        buttonSound = MediaPlayer.create(this, R.raw.button_audio)
         val group = findViewById<ViewGroup>(R.id.container)
         homeButton = findViewById(R.id.backToHome)
         restart = findViewById(R.id.restart)
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         setDefaultValue()
     }
 
-    private fun completePuzzle(){
+    private fun completePuzzle() {
         initNumbers()
         for (i in 0..14) {
             val x = i / 4
@@ -130,11 +130,8 @@ class MainActivity : AppCompatActivity() {
             empty.x = c.x
             empty.y = c.y
             textScore!!.text = score.toString()
-            if (localStorage!!.audioPlay && !mediaPlayer!!.isPlaying){
-                mediaPlayer!!.start()
-            }
             win()
-           // localStorage!!.score = (textScore!!.text.toString())
+            // localStorage!!.score = (textScore!!.text.toString())
         }
     }
 
@@ -154,7 +151,7 @@ class MainActivity : AppCompatActivity() {
         if (isWin()) {
             val intent = Intent(this, WinActivity::class.java)
             intent.putExtra("SCORE", textScore!!.text.toString())
-            intent.putExtra("TIME",chronometer!!.text.toString())
+            intent.putExtra("TIME", chronometer!!.text.toString())
             startActivity(intent)
             finish()
             loadNumbers()
@@ -165,9 +162,9 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         //textScore!!.text = localStorage!!.score
-
         if (localStorage!!.audioPlay) {
             mediaPlayer?.start();
+            mediaPlayer?.isLooping = true
         } else mediaPlayer?.stop();
 
         if (pauseTime != 0L) {
