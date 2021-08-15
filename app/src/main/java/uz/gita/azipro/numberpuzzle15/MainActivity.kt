@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
         homeButton?.setOnClickListener { clickBackToHome() }
         findViewById<ImageButton>(R.id.completePuzzle).setOnClickListener{
             completePuzzle()
-            Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show()
         }
     }
 
