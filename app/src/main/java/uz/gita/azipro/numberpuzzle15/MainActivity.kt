@@ -19,12 +19,13 @@ class MainActivity : AppCompatActivity() {
     private var textScore: TextView? = null
     private var score = 0
     private var chronometer: Chronometer? = null
-    private var mediaPlayer: MediaPlayer? = null
-    private var buttonSound: MediaPlayer? = null
-    private var localStorage: LocalStorage? = null
+    private lateinit var mediaPlayer: MediaPlayer
+    private lateinit var buttonSound: MediaPlayer
+    private lateinit var localStorage: LocalStorage
     private var homeButton: LinearLayout? = null
     private var restart: LinearLayout? = null
-    private var switchCompat: SwitchCompat? = null
+    private lateinit var bgMusic: ImageButton
+    private lateinit var btnSound: ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,15 +33,44 @@ class MainActivity : AppCompatActivity() {
         initButtons()
         initNumbers()
         loadNumbers()
-        switchCompat = findViewById(R.id.buttonSwitch)
         restart?.setOnClickListener { clickRestart() }
         homeButton?.setOnClickListener { clickBackToHome() }
         findViewById<ImageButton>(R.id.completePuzzle).setOnClickListener {
             completePuzzle()
         }
+        bgMusic.setOnClickListener { onOffMusic() }
+        btnSound.setOnClickListener { onOffSound() }
+    }
+
+    private fun onOffSound() {
+        if (localStorage.audioSound) {
+            localStorage.audioSound = false
+            btnSound.setImageResource(R.drawable.ic_mute_volume)
+        } else {
+            localStorage.audioSound = true
+            btnSound.setImageResource(R.drawable.ic_volume)
+        }
+    }
+
+    private fun onOffMusic() {
+        if (!mediaPlayer.isPlaying) {
+            mediaPlayer.start()
+            mediaPlayer.isLooping = true
+            bgMusic.setImageResource(R.drawable.ic_music_note)
+            localStorage!!.audioPlay = true
+            Toast.makeText(this, "audio play ${localStorage!!.audioPlay}  playing: ${mediaPlayer!!.isPlaying}", Toast.LENGTH_SHORT).show()
+
+        } else {
+            mediaPlayer.stop()
+            bgMusic.setImageResource(R.drawable.ic_muted_notes)
+            localStorage!!.audioPlay = false
+            Toast.makeText(this, "audio play ${localStorage!!.audioPlay}  playing: ${mediaPlayer!!.isPlaying}", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun initButtons() {
+        bgMusic = findViewById(R.id.bgMusic)
+        btnSound = findViewById(R.id.btnSound)
         mediaPlayer = MediaPlayer.create(this, R.raw.audio)
         buttonSound = MediaPlayer.create(this, R.raw.button_audio)
         val group = findViewById<ViewGroup>(R.id.container)
@@ -49,6 +79,15 @@ class MainActivity : AppCompatActivity() {
         buttons = Array(4) { arrayOfNulls<Button>(4) }
         textScore = findViewById(R.id.textScore)
         chronometer = findViewById(R.id.chronometer)
+
+        if (localStorage.audioSound) {
+            btnSound.setImageResource(R.drawable.ic_volume)
+        } else btnSound.setImageResource(R.drawable.ic_mute_volume)
+
+        if (localStorage.audioPlay) {
+            bgMusic.setImageResource(R.drawable.ic_music_note)
+        } else bgMusic.setImageResource(R.drawable.ic_muted_notes)
+
         val count = group.childCount
         empty = Coordinate(3, 3)
         for (i in 0 until count) {
@@ -80,7 +119,7 @@ class MainActivity : AppCompatActivity() {
             if (button != null) {
                 button.text = numbers!![i]
             }
-            button?.setBackgroundResource(R.color.peach_color)
+            button?.setBackgroundResource(R.drawable.ic_game_item)
         }
         setDefaultValue()
     }
@@ -94,19 +133,19 @@ class MainActivity : AppCompatActivity() {
             if (button != null) {
                 button.text = numbers!![i]
             }
-            button?.setBackgroundResource(R.color.peach_color)
+            button?.setBackgroundResource(R.drawable.ic_game_item)
         }
         empty.x = 3
         empty.y = 3
         buttons[3][3]!!.text = ""
-        buttons[3][3]!!.setBackgroundResource(R.color.blue_color)
+        buttons[3][3]!!.setBackgroundResource(R.drawable.empty_item)
     }
 
     private fun setDefaultValue() {
         empty.x = 3
         empty.y = 3
         buttons[3][3]!!.text = ""
-        buttons[3][3]!!.setBackgroundResource(R.color.blue_color)
+        buttons[3][3]!!.setBackgroundResource(R.drawable.empty_item)
         textScore!!.text = "0"
         score = 0
         chronometer!!.base = SystemClock.elapsedRealtime()
@@ -114,7 +153,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun clickGameItem(button: Button) {
-        buttonSound!!.start()
+        if (localStorage.audioSound) {
+            buttonSound.start()
+        }
         val c = button.tag as Coordinate
         val dx: Int = kotlin.math.abs(empty.x - c.x)
         val dy: Int = kotlin.math.abs(empty.y - c.y)
@@ -124,8 +165,8 @@ class MainActivity : AppCompatActivity() {
             if (emptyButton != null) {
                 emptyButton.text = button.text
             }
-            emptyButton?.setBackgroundResource(R.color.peach_color)
-            button.setBackgroundResource(R.color.blue_color)
+            emptyButton?.setBackgroundResource(R.drawable.ic_game_item)
+            button.setBackgroundResource(R.drawable.empty_item)
             button.text = ""
             empty.x = c.x
             empty.y = c.y
@@ -159,13 +200,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private var pauseTime: Long = 0
+
     override fun onStart() {
         super.onStart()
-        //textScore!!.text = localStorage!!.score
         if (localStorage!!.audioPlay) {
-            mediaPlayer?.start();
-            mediaPlayer?.isLooping = true
-        } else mediaPlayer?.stop();
+            mediaPlayer.start()
+            mediaPlayer.isLooping = true
+        } else mediaPlayer.stop()
 
         if (pauseTime != 0L) {
             chronometer?.base = (SystemClock.elapsedRealtime() + pauseTime);
@@ -175,7 +216,7 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onStop() {
-        mediaPlayer!!.pause()
+        mediaPlayer.pause()
         super.onStop()
         pauseTime = chronometer!!.base - SystemClock.elapsedRealtime()
         chronometer!!.stop()
@@ -183,17 +224,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        mediaPlayer!!.stop()
-        mediaPlayer!!.release()
+        mediaPlayer.stop()
+        mediaPlayer.release()
     }
 
     override fun onRestart() {
         super.onRestart()
-        switchCompat?.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                mediaPlayer?.start();
-            } else mediaPlayer?.stop();
-        }
+        if (localStorage!!.audioPlay) {
+            mediaPlayer.start()
+            mediaPlayer.isLooping = true
+        } else mediaPlayer.stop()
     }
 
     private fun clickRestart() {

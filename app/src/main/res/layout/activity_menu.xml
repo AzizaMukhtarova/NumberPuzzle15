@@ -3,9 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home_bg"
+    android:background="@drawable/white_background"
     tools:context=".MenuActivity">
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="#4D7C67A2"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -15,38 +19,37 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_gravity="center|top"
-
-            android:src="@drawable/puzzle_logo" />
+            android:src="@drawable/logo" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_play"
             style="@style/Button.Menu"
             android:layout_marginTop="40dp"
-            android:backgroundTint="@color/blue_color"
+            android:background="@drawable/ic_purple_button"
             android:text="Play" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_setting"
             style="@style/Button.Menu"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/peach_color"
-            android:text="Settings" />
+            android:background="@drawable/ic_purple_button"
+            android:text="Statistics"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_about"
             style="@style/Button.Menu"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/purple_color"
+            android:background="@drawable/ic_purple_button"
             android:text="About" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_exit"
             style="@style/Button.Menu"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/yellow_color"
+            android:background="@drawable/ic_purple_button"
             android:text="Exit" />
     </LinearLayout>
 </FrameLayout>

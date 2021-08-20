@@ -4,16 +4,44 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable-v24/bg_item.xml" value="0.21203703703703702" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable-v24/ic_button_peach.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable-v24/ic_button_purple.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable-v24/ic_button_yellow.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21979166666666666" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/bg_button.xml" value="0.2518518518518518" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/bg_button_win.xml" value="0.2546875" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/bg_item.xml" value="0.2518518518518518" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/bg_items.xml" value="0.2546875" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/clickable.xml" value="0.2453125" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/empty_item.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_arrows.xml" value="0.21979166666666666" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_back.xml" value="0.23489583333333333" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_badge.xml" value="0.2546875" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_baseline_update.xml" value="0.23489583333333333" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_bg_game_items.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_bg_moves.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_bg_time.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_button.xml" value="0.24322916666666666" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_button_peach.xml" value="0.264" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_button_purple.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_button_yellow.xml" value="0.2546875" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_complate.xml" value="0.24583333333333332" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_game_item.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_green_button.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_home.xml" value="0.21979166666666666" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_medal.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_music_note.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_mute_volume.xml" value="0.24375" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_muted_notes.xml" value="0.24375" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_notes.xml" value="0.24375" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_play.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_purple_button.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_restart_alt.xml" value="0.19479166666666667" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_time_bg.xml" value="0.2546875" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_timer.xml" value="0.19479166666666667" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_volume.xml" value="0.24375" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/layout/activity_about.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/layout/activity_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/layout/activity_setting.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/layout/activity_win.xml" value="0.25416666666666665" />

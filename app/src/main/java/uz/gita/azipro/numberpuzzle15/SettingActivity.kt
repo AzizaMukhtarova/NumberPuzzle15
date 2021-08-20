@@ -20,21 +20,21 @@ class SettingActivity : AppCompatActivity() {
         findViewById<ImageView>(R.id.back).setOnClickListener{
             finish()
         }
-        localStorage = LocalStorage(this)
-        switchCompat = findViewById(R.id.buttonSwitch)
-        loadData()
-        switchCompat.setOnClickListener { saveData() }
+//        localStorage = LocalStorage(this)
+//        switchCompat = findViewById(R.id.buttonSwitch)
+//        loadData()
+//        switchCompat.setOnClickListener { saveData() }
 
 
 
 
     }
 
-    private fun saveData() {
-       localStorage!!.audioPlay=switchCompat.isChecked
-    }
-
-    private fun loadData() {
-        switchCompat.isChecked = localStorage!!.audioPlay
-    }
+//    private fun saveData() {
+//       localStorage!!.audioPlay=switchCompat.isChecked
+//    }
+//
+//    private fun loadData() {
+//        switchCompat.isChecked = localStorage!!.audioPlay
+//    }
 }

@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_color"
+    android:background="@drawable/white_background"
     tools:context=".SettingActivity">
 
     <FrameLayout
-        android:layout_gravity="top|center"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="#CC3F385A"
+        android:layout_gravity="top|center"
+        android:background="#784D94"
         android:elevation="4dp">
 
         <ImageView
@@ -19,32 +19,19 @@
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:layout_gravity="start|center"
+            android:background="@drawable/clickable"
             android:clickable="true"
             android:focusable="true"
             android:padding="10dp"
-            android:src="@drawable/ic_back"
-            android:background="@drawable/clickable"/>
-
-    </FrameLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center">
-
+            android:src="@drawable/ic_back" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:text="Sound: "
+            android:text="Statistics"
+            android:layout_gravity="center"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:fontFamily="@font/boogaloo"
+            android:textSize="30sp"/>
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/buttonSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
+    </FrameLayout>
 </FrameLayout>

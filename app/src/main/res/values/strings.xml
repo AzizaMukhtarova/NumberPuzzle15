@@ -7,4 +7,7 @@ Named for the number of tiles in the frame, the 15 puzzle may also be called a 1
 
 The n puzzle is a classical problem for modelling algorithms involving heuristics. Commonly used heuristics for this problem include counting the number of misplaced tiles and finding the sum of the taxicab distances between each block and its position in the goal configuration.[1] Note that both are admissible, i.e. they never overestimate the number of moves left, which ensures optimality for certain search algorithms such as A*</string>
     <string name="about_text">Hello there. My name is Aziza. I created this app while I was studying at GITA Programming Academy. This app was given to us as a homework assignment in Lesson 3.</string>
+    <string name="moves">Moves</string>
+    <string name="home">Home</string>
+    <string name="restart">Restart</string>
 </resources>
