@@ -5,6 +5,7 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
+import android.util.Log
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.widget.SwitchCompat
@@ -53,19 +54,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onOffMusic() {
-        if (!mediaPlayer.isPlaying) {
+        if (localStorage.audioPlay) {
+            mediaPlayer.stop()
+            bgMusic.setImageResource(R.drawable.ic_muted_notes)
+            localStorage.audioPlay = false
+
+        } else {
+            mediaPlayer.prepare()
             mediaPlayer.start()
             mediaPlayer.isLooping = true
             bgMusic.setImageResource(R.drawable.ic_music_note)
-            localStorage!!.audioPlay = true
-            Toast.makeText(this, "audio play ${localStorage!!.audioPlay}  playing: ${mediaPlayer!!.isPlaying}", Toast.LENGTH_SHORT).show()
-
-        } else {
-            mediaPlayer.stop()
-            bgMusic.setImageResource(R.drawable.ic_muted_notes)
-            localStorage!!.audioPlay = false
-            Toast.makeText(this, "audio play ${localStorage!!.audioPlay}  playing: ${mediaPlayer!!.isPlaying}", Toast.LENGTH_SHORT).show()
+            localStorage.audioPlay = true
         }
+        Log.d("TTT", "onOffMusic: ${localStorage.audioPlay}")
     }
 
     private fun initButtons() {
@@ -203,7 +204,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        if (localStorage!!.audioPlay) {
+        if (localStorage.audioPlay) {
             mediaPlayer.start()
             mediaPlayer.isLooping = true
         } else mediaPlayer.stop()
@@ -228,18 +229,9 @@ class MainActivity : AppCompatActivity() {
         mediaPlayer.release()
     }
 
-    override fun onRestart() {
-        super.onRestart()
-        if (localStorage!!.audioPlay) {
-            mediaPlayer.start()
-            mediaPlayer.isLooping = true
-        } else mediaPlayer.stop()
-    }
-
     private fun clickRestart() {
         loadNumbers()
     }
-
 
     private fun clickBackToHome() {
         val intent = Intent(this, MenuActivity::class.java)
