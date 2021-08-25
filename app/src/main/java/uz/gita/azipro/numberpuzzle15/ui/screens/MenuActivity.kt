@@ -1,9 +1,10 @@
-package uz.gita.azipro.numberpuzzle15
+package uz.gita.azipro.numberpuzzle15.ui.screens
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import uz.gita.azipro.numberpuzzle15.R
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,10 +14,11 @@ class MenuActivity : AppCompatActivity() {
         findViewById<View>(R.id.button_play).setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         findViewById<View>(R.id.button_setting).setOnClickListener {
-            val intent = Intent(this, SettingActivity::class.java)
+            val intent = Intent(this, HistoryActivity::class.java)
             startActivity(intent)
         }
 

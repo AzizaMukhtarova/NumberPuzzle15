@@ -1,12 +1,12 @@
-package uz.gita.azipro.numberpuzzle15.model
+package uz.gita.azipro.numberpuzzle15.data.database
 
 import android.content.Context
-import android.content.SharedPreferences
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class LocalStorage(context: Context) {
 
-    private val preferences = context.getSharedPreferences("LocalStorage", Context.MODE_PRIVATE)
-
+   private val preferences = context.getSharedPreferences("LocalStorage", Context.MODE_PRIVATE)
 
     var score: String?
         set(value) = preferences.edit().putString("SCORE", value).apply()
@@ -19,4 +19,5 @@ class LocalStorage(context: Context) {
     var audioSound: Boolean
         set(value) = preferences.edit().putBoolean("SOUND", value).apply()
         get() = preferences.getBoolean("SOUND", false)
+
 }

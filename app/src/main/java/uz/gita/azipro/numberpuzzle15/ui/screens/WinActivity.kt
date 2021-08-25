@@ -1,11 +1,11 @@
-package uz.gita.azipro.numberpuzzle15
+package uz.gita.azipro.numberpuzzle15.ui.screens
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
+import uz.gita.azipro.numberpuzzle15.R
 
 class WinActivity : AppCompatActivity() {
 
@@ -23,13 +23,13 @@ class WinActivity : AppCompatActivity() {
         }
 
         findViewById<LinearLayout>(R.id.playAgain).setOnClickListener{
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         findViewById<LinearLayout>(R.id.backToHome).setOnClickListener{
-            val intent = Intent(this,MenuActivity::class.java)
+            val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
             finish()
         }

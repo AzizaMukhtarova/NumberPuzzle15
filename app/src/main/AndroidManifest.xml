@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NumberPuzzle15">
         <activity
-            android:name=".WinActivity"
+            android:name=".ui.screens.WinActivity"
             android:exported="true" />
         <activity
-            android:name=".SettingActivity"
+            android:name=".ui.screens.HistoryActivity"
             android:exported="true" />
         <activity
-            android:name=".AboutActivity"
+            android:name=".ui.screens.AboutActivity"
             android:exported="true" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".ui.screens.MenuActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.screens.MainActivity"
             android:exported="true"/>
     </application>
 

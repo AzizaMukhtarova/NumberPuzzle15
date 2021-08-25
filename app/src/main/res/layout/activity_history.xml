@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/white_background"
-    tools:context=".ui.screens.AboutActivity"
-    android:orientation="vertical">
+    tools:context=".ui.screens.HistoryActivity">
 
     <FrameLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@color/purple_color"
@@ -31,31 +31,19 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_back" />
         </FrameLayout>
+
+
         <TextView
             style="@style/Text"
-            android:text="@string/about_app"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:text="@string/statistics" />
     </FrameLayout>
-<TextView
-    style="@style/Text"
-    android:text="@string/puzzle_15"
-    android:textColor="@color/black"
-    android:textSize="40sp"
-    app:layout_constraintLeft_toLeftOf="@id/main_text"
-    app:layout_constraintRight_toRightOf="@id/main_text"
-    app:layout_constraintBottom_toTopOf="@id/main_text"/>
-    <TextView
-        android:id="@+id/main_text"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:padding="20dp"
-        android:textAlignment="center"
-        android:layout_width="wrap_content"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/about_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#5F3F79</color>
-    <color name="teal_200">#4BB0E4</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="element_color">#421D59</color>
-    <color name="element_pressed_color">#D0492261</color>
-    <color name="text_color">#FFFFFF</color>
-    <color name="empty_color">#BCA4C1</color>
-    <color name="button_color">#6D266B</color>
-    <color name="main_color">#7C67A2</color>
-    <color name="activity_background">#FF7C67A2</color>
+    <color name="green_color">#24AA2F</color>
+    <color name="dark_green_color">#18721A</color>
+    <color name="light_green_color">#41C650</color>
+    <color name="yellow_color">#F3A012</color>
+    <color name="light_yellow_color">#F1C30F</color>
+    <color name="dark_purple_color">#5e3f7a</color>
+    <color name="purple_color">#7F519C</color>
+    <color name="light_purple_color">#A366C5</color>
 
-    <color name="blue_color">#4BB0E4</color>
-    <color name="yellow_color">#FBC625</color>
-    <color name="purple_color">#848AC4</color>
-    <color name="peach_color">#E95F79</color>
-
-    <color name="toolbar_color">#3F385A</color>
+    <color name="bg_transparent_color">#595E3F7A</color>
 </resources>

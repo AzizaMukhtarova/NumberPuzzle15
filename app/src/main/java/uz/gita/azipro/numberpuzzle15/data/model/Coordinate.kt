@@ -1,4 +1,4 @@
-package uz.gita.azipro.numberpuzzle15.model
+package uz.gita.azipro.numberpuzzle15.data.model
 
 import androidx.annotation.Keep
 

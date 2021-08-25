@@ -1,41 +1,46 @@
-package uz.gita.azipro.numberpuzzle15
+package uz.gita.azipro.numberpuzzle15.ui.screens
 
 import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
-import android.util.Log
 import android.view.ViewGroup
 import android.widget.*
-import androidx.appcompat.widget.SwitchCompat
-import uz.gita.azipro.numberpuzzle15.model.Coordinate
-import uz.gita.azipro.numberpuzzle15.model.LocalStorage
-import java.util.*
+import uz.gita.azipro.numberpuzzle15.R
+import uz.gita.azipro.numberpuzzle15.data.database.AppDatabase
+import uz.gita.azipro.numberpuzzle15.data.database.LocalStorage
+import uz.gita.azipro.numberpuzzle15.data.entities.GameEntity
+import uz.gita.azipro.numberpuzzle15.data.model.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     private lateinit var buttons: Array<Array<Button?>>
     private lateinit var empty: Coordinate
-    private var numbers: ArrayList<String>? = null
-    private var textScore: TextView? = null
-    private var score = 0
-    private var chronometer: Chronometer? = null
+    private lateinit var numbers: ArrayList<String>
+    private lateinit var textScore: TextView
+    private lateinit var chronometer: Chronometer
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var buttonSound: MediaPlayer
     private lateinit var localStorage: LocalStorage
-    private var homeButton: LinearLayout? = null
-    private var restart: LinearLayout? = null
+    private lateinit var homeButton: LinearLayout
+    private lateinit var restart: LinearLayout
     private lateinit var bgMusic: ImageButton
     private lateinit var btnSound: ImageButton
+    private var score = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         localStorage = LocalStorage(this)
+
         initButtons()
         initNumbers()
         loadNumbers()
-        restart?.setOnClickListener { clickRestart() }
-        homeButton?.setOnClickListener { clickBackToHome() }
+        restart.setOnClickListener { clickRestart() }
+        homeButton.setOnClickListener { clickBackToHome() }
+
         findViewById<ImageButton>(R.id.completePuzzle).setOnClickListener {
             completePuzzle()
         }
@@ -56,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     private fun onOffMusic() {
         if (localStorage.audioPlay) {
             mediaPlayer.stop()
-            bgMusic.setImageResource(R.drawable.ic_muted_notes)
+            bgMusic.setImageResource(R.drawable.muted_note)
             localStorage.audioPlay = false
 
         } else {
@@ -66,7 +71,6 @@ class MainActivity : AppCompatActivity() {
             bgMusic.setImageResource(R.drawable.ic_music_note)
             localStorage.audioPlay = true
         }
-        Log.d("TTT", "onOffMusic: ${localStorage.audioPlay}")
     }
 
     private fun initButtons() {
@@ -74,12 +78,12 @@ class MainActivity : AppCompatActivity() {
         btnSound = findViewById(R.id.btnSound)
         mediaPlayer = MediaPlayer.create(this, R.raw.audio)
         buttonSound = MediaPlayer.create(this, R.raw.button_audio)
-        val group = findViewById<ViewGroup>(R.id.container)
         homeButton = findViewById(R.id.backToHome)
         restart = findViewById(R.id.restart)
-        buttons = Array(4) { arrayOfNulls<Button>(4) }
+        buttons = Array(4) { arrayOfNulls(4) }
         textScore = findViewById(R.id.textScore)
         chronometer = findViewById(R.id.chronometer)
+        val group = findViewById<ViewGroup>(R.id.container)
 
         if (localStorage.audioSound) {
             btnSound.setImageResource(R.drawable.ic_volume)
@@ -87,7 +91,7 @@ class MainActivity : AppCompatActivity() {
 
         if (localStorage.audioPlay) {
             bgMusic.setImageResource(R.drawable.ic_music_note)
-        } else bgMusic.setImageResource(R.drawable.ic_muted_notes)
+        } else bgMusic.setImageResource(R.drawable.muted_note)
 
         val count = group.childCount
         empty = Coordinate(3, 3)
@@ -107,18 +111,18 @@ class MainActivity : AppCompatActivity() {
     private fun initNumbers() {
         numbers = ArrayList()
         for (i in 1..15) {
-            numbers!!.add(i.toString())
+            numbers.add(i.toString())
         }
     }
 
     private fun loadNumbers() {
-        numbers?.shuffle()
+        numbers.shuffle()
         for (i in 0..14) {
             val x = i / 4
             val y = i % 4
             val button = buttons[x][y]
             if (button != null) {
-                button.text = numbers!![i]
+                button.text = numbers[i]
             }
             button?.setBackgroundResource(R.drawable.ic_game_item)
         }
@@ -132,7 +136,7 @@ class MainActivity : AppCompatActivity() {
             val y = i % 4
             val button = buttons[x][y]
             if (button != null) {
-                button.text = numbers!![i]
+                button.text = numbers[i]
             }
             button?.setBackgroundResource(R.drawable.ic_game_item)
         }
@@ -147,10 +151,10 @@ class MainActivity : AppCompatActivity() {
         empty.y = 3
         buttons[3][3]!!.text = ""
         buttons[3][3]!!.setBackgroundResource(R.drawable.empty_item)
-        textScore!!.text = "0"
+        textScore.text = "0"
         score = 0
-        chronometer!!.base = SystemClock.elapsedRealtime()
-        chronometer!!.start()
+        chronometer.base = SystemClock.elapsedRealtime()
+        chronometer.start()
     }
 
     private fun clickGameItem(button: Button) {
@@ -171,9 +175,8 @@ class MainActivity : AppCompatActivity() {
             button.text = ""
             empty.x = c.x
             empty.y = c.y
-            textScore!!.text = score.toString()
+            textScore.text = score.toString()
             win()
-            // localStorage!!.score = (textScore!!.text.toString())
         }
     }
 
@@ -192,12 +195,18 @@ class MainActivity : AppCompatActivity() {
     private fun win() {
         if (isWin()) {
             val intent = Intent(this, WinActivity::class.java)
-            intent.putExtra("SCORE", textScore!!.text.toString())
-            intent.putExtra("TIME", chronometer!!.text.toString())
+            intent.putExtra("SCORE", textScore.text.toString())
+            intent.putExtra("TIME", chronometer.text.toString())
             startActivity(intent)
+            saveHistory(textScore.text.toString(), chronometer.text.toString())
             finish()
             loadNumbers()
         }
+    }
+
+    private fun saveHistory(score: String, time: String) {
+        val history = GameEntity(0, score, time)
+        AppDatabase.getAppDatabase(this).gameDao().addHistory(history)
     }
 
     private var pauseTime: Long = 0
@@ -210,8 +219,8 @@ class MainActivity : AppCompatActivity() {
         } else mediaPlayer.stop()
 
         if (pauseTime != 0L) {
-            chronometer?.base = (SystemClock.elapsedRealtime() + pauseTime);
-            chronometer?.start();
+            chronometer.base = (SystemClock.elapsedRealtime() + pauseTime)
+            chronometer.start()
         }
     }
 
@@ -219,8 +228,8 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         mediaPlayer.pause()
         super.onStop()
-        pauseTime = chronometer!!.base - SystemClock.elapsedRealtime()
-        chronometer!!.stop()
+        pauseTime = chronometer.base - SystemClock.elapsedRealtime()
+        chronometer.stop()
     }
 
     override fun onDestroy() {
