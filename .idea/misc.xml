@@ -34,6 +34,7 @@
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_medal.xml" value="0.2546875" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_music_note.xml" value="0.2546875" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_mute_volume.xml" value="0.24375" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_muted_note.xml" value="0.2546875" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_muted_notes.xml" value="0.24375" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_notes.xml" value="0.24375" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_pink_btn.xml" value="0.2546875" />
@@ -43,9 +44,11 @@
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_restart_alt.xml" value="0.19479166666666667" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_time_bg.xml" value="0.2546875" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_timer.xml" value="0.19479166666666667" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_trash.xml" value="0.2703125" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_volume.xml" value="0.24375" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/drawable/ic_yellow_btn.xml" value="0.21770833333333334" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/layout/activity_about.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/layout/activity_history.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/layout/activity_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Aziza/AndroidStudioProjects/NumberPuzzle15/app/src/main/res/layout/activity_setting.xml" value="0.25416666666666665" />

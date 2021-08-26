@@ -36,26 +36,79 @@
             android:text="@string/about_app"
             android:layout_gravity="center" />
     </FrameLayout>
-<TextView
-    style="@style/Text"
-    android:text="@string/puzzle_15"
-    android:textColor="@color/black"
-    android:textSize="40sp"
+<ImageView
+    android:id="@+id/logo"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/logo"
+    app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintLeft_toLeftOf="@id/main_text"
     app:layout_constraintRight_toRightOf="@id/main_text"
-    app:layout_constraintBottom_toTopOf="@id/main_text"/>
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintVertical_bias="0.15"/>
+    <TextView
+        android:id="@+id/text1"
+        style="@style/Text"
+        android:text="How to play?"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"/>
+
+    <TextView
+        android:id="@+id/howToPlay"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/how_to_play"
+        app:layout_constraintLeft_toLeftOf="@id/text1"
+        app:layout_constraintRight_toRightOf="@id/text1"
+        app:layout_constraintTop_toBottomOf="@id/text1"/>
+
+    <TextView
+        android:id="@+id/text2"
+        style="@style/Text"
+        android:text="Developed by"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/howToPlay"/>
     <TextView
         android:id="@+id/main_text"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:padding="20dp"
         android:textAlignment="center"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="@string/about_text"
+        app:layout_constraintLeft_toLeftOf="@id/text2"
+        app:layout_constraintRight_toRightOf="@id/text2"
+        app:layout_constraintTop_toBottomOf="@id/text2"/>
+
+    <TextView
+        android:id="@+id/text3"
+        style="@style/Text"
+        android:text="Contact:"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@id/mail_address"
+        app:layout_constraintRight_toRightOf="@id/mail_address"
+        app:layout_constraintBottom_toTopOf="@id/mail_address"/>
+
+    <TextView
+        android:id="@+id/mail_address"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:layout_marginBottom="15dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="azizamukhtarova98@gmail.com"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

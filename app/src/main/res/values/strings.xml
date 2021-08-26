@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">NumberPuzzle15</string>
+    <string name="app_name">Puzzle15</string>
 
     <string name="puzzle_rules">The 15 puzzle (also called Gem Puzzle, Boss Puzzle, Game of Fifteen, Mystic Square and many others) is a sliding puzzle having 15 square tiles numbered 1–15 in a frame that is 4 tiles high and 4 tiles wide, leaving one unoccupied tile position. Tiles in the same row or column of the open position can be moved by sliding them horizontally or vertically, respectively. The goal of the puzzle is to place the tiles in numerical order.
 
 Named for the number of tiles in the frame, the 15 puzzle may also be called a 16 puzzle, alluding to its total tile capacity. Similar names are used for different sized variants of the 15 puzzle, such as the 8 puzzle that has 8 tiles in a 3×3 frame.
 
 The n puzzle is a classical problem for modelling algorithms involving heuristics. Commonly used heuristics for this problem include counting the number of misplaced tiles and finding the sum of the taxicab distances between each block and its position in the goal configuration.[1] Note that both are admissible, i.e. they never overestimate the number of moves left, which ensures optimality for certain search algorithms such as A*</string>
-    <string name="about_text">Hello there. My name is Aziza. I created this app while I was studying at GITA Programming Academy. This app was given to us as a homework assignment in Lesson 3.</string>
-    <string name="moves">Moves</string>
-    <string name="home">Home</string>
-    <string name="restart">Restart</string>
+    <string name="about_text">My name is Aziza. I created this app while I was studying at GITA Programming Academy. This app was given to us as a homework assignment in Lesson 3.</string>
+    <string name="moves">moves</string>
+    <string name="home">Menu</string>
+    <string name="restart">Reset</string>
     <string name="play">Play</string>
     <string name="statistics">Statistics</string>
     <string name="about">About</string>
@@ -21,4 +21,8 @@ The n puzzle is a classical problem for modelling algorithms involving heuristic
     <string name="play_again">Play again</string>
     <string name="about_app">About app</string>
     <string name="puzzle_15">Puzzle 15</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="do_you_want_to_delete">Do you want to delete all statistics?</string>
+    <string name="how_to_play">Move tiles in grid to order them from 1 to 15. To move a tile you can click on it.</string>
 </resources>

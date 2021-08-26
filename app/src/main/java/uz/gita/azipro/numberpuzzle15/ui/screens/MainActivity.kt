@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     private fun onOffMusic() {
         if (localStorage.audioPlay) {
             mediaPlayer.stop()
-            bgMusic.setImageResource(R.drawable.muted_note)
+            bgMusic.setImageResource(R.drawable.ic_muted_note)
             localStorage.audioPlay = false
 
         } else {
@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
 
         if (localStorage.audioPlay) {
             bgMusic.setImageResource(R.drawable.ic_music_note)
-        } else bgMusic.setImageResource(R.drawable.muted_note)
+        } else bgMusic.setImageResource(R.drawable.ic_muted_note)
 
         val count = group.childCount
         empty = Coordinate(3, 3)

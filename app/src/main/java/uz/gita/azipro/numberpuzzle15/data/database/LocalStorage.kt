@@ -1,8 +1,6 @@
 package uz.gita.azipro.numberpuzzle15.data.database
 
 import android.content.Context
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 
 class LocalStorage(context: Context) {
 

@@ -10,7 +10,7 @@ import uz.gita.azipro.numberpuzzle15.data.entities.GameEntity
 @Dao
 interface GameDao {
 
-    @Query("SELECT * FROM GameEntity")
+    @Query("SELECT * FROM game_table")
     fun getHistory(): List<GameEntity>
 
     @Insert
@@ -18,4 +18,7 @@ interface GameDao {
 
     @Delete
     fun removeHistory(subject: GameEntity)
+
+    @Query("DELETE FROM game_table")
+    fun deleteAll()
 }

@@ -37,13 +37,85 @@
             style="@style/Text"
             android:layout_gravity="center"
             android:text="@string/statistics" />
+
+        <FrameLayout
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end|center"
+            android:background="@drawable/clickable"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_trash" />
+        </FrameLayout>
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:layout_marginTop="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/fl_delete_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99FFFFFF"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/bg_items">
+            <TextView
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                style="@style/Text"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:text="@string/do_you_want_to_delete"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Text"
+                    android:textColor="@color/black"
+                    android:text="@string/no"
+                    android:background="@drawable/clickable"/>
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/tv_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Text"
+                    android:textColor="@color/black"
+                    android:text="@string/yes"
+                    android:background="@drawable/clickable"/>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
