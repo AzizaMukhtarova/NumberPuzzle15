@@ -19,13 +19,13 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/boogaloo</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">28sp</item>
     </style>
 
 
     <style name="GameItem">
-        <item name="android:layout_width">70dp</item>
-        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
         <item name="android:layout_margin">3dp</item>
         <item name="android:textSize">30sp</item>
         <item name="android:textColor">@color/white</item>
@@ -34,7 +34,7 @@
     </style>
 
     <style name="GameButton" parent="ButtonMenu">
-        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:background">@drawable/ic_green_button</item>
